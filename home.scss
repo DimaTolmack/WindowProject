@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+$inter-family:'Inter', sans-serif;
 $text-color-menu : #FFFFFF;
 $nav-backround: #282828;
 
@@ -9,7 +11,11 @@ $nav-backround: #282828;
     cursor:pointer;
 }
 
-
+* {
+    padding:0;
+    margin: 0;
+    font-family: $inter-family;
+}
 
 body {
     display:flex;
@@ -21,26 +27,25 @@ body {
 .container {
     width: 1440px;
     min-height: 100px;
-    background-color: green;
 }
 
 .navigation {
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
     background: $nav-backround;
     height: 76px;
+
     .nav_logo {
-        background-image: url(./img/Logo\ \(2\).jpg);
         background-color: #282828;
         width: 50px;
         height: 50px;
-        position: relative;
-        top:20px;
-        left: 60px;
-        
+        flex-basis:100px;
     }
 
     .nav_menu {
         max-width: 600px;
-        transform: translate(50px, -40px);
+
         .navbar {
             list-style-type: none;
             text-align: center;
@@ -62,9 +67,8 @@ body {
     }
 
     .nav_button {
-        position:relative;
-        left: 85%;
-        top:-80px;
+        position: relative;
+        left: 45%;
         width:100px;
         font-size: 1.3em;
         text-decoration: none;
@@ -75,38 +79,49 @@ body {
     
 }
 
-.banner {
+.menu {
     width: 100%;
-    height:700px;
-    background: green;
+    height:750px;
 
     .list_menu {
-        transform: translateY(-15px);
         width: 100%;
-        height: 70px;
-        border-bottom: 2px solid white;
+        height: 60px;
 
     ul {
-        display:grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        height:70px;
+        display:flex;
+        height:50px;
+        
 
     }
 
     li {
+        width:100%;
+        height:60px;
         text-align: center;
         list-style: none;
         border-left: none;
-        border-right: 2px solid white;
-
-
+        border-bottom: 1px solid rgba(0,0,1);
+        border-right: 1px solid rgba(0,0,1);
     }
 
     a {
         @extend %a;
         color: rgba(0, 0, 0, 1);
         font-size: 1.2em;
-        line-height: 70px;
+        line-height: 50px;
+    }
+ 
+    .start {
+        border-left: none;
+        width: 140%;
+        text-align: end;
+        padding-right: 30px;
+    }
+    .end {
+        border-right: none;
+        width: 140%;
+        text-align:start;
+        padding-left: 30px;
     }
 }
 
@@ -114,4 +129,62 @@ body {
 
 }
 
+.banner_wrapper {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    position: relative;
+    top: 80px;
+    .banner_text {
+        width: 650px;
+        height:600px;
+        align-self: flex-end;
+        h1 {
+            padding: 0 20px;
+            font-size: 3.2em;
+            text-transform: uppercase;
+        }
+        p {
+            position: relative;
+            top:33%;
+            padding: 0 30px;
+            font-size: 1.25em;
+        }
 
+        a {
+            font-size: 1.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color:$nav-backround;
+            padding: 0 30px;
+            position: relative;
+            top:16%;
+            
+        }
+
+        .item_img{
+            transform: translate(90px, 100px);
+        }
+    }
+    
+
+    .banner_img {
+        width:650px;
+        height:600px;
+        background-image: url(./img/etienne-beauregard-riverin-B0aCvAVSX8E-unsplash\ 1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+}
+
+section {
+    background: green;
+    width: 100%;
+    .wrap {
+
+    }
+    .title {
+        
+    }
+}
